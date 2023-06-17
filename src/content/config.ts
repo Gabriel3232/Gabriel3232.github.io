@@ -5,9 +5,8 @@ const scores = defineCollection({
   type: 'data',
   schema: z.object({
     title: z.string(),
-    author: z.array(z.string()),
-    path:  z.string(),
-    thumbnail: z.string()
+    author: z.string(),
+    filename:  z.string(),
   }),
 });
 

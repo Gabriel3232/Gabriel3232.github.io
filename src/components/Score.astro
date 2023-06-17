@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  score: CollectionEntry<'scores'>;
+  thumbnail: string | undefined;
+}
+
+const { score, thumbnail } = Astro.props;
+---
+
+<script>
+
+</script>
+
+<div class="card">
+	<p class="name">{score.data.title}</p>
+	<p class="author">{score.data.author}</p>
+	<a href={`/scores/${score.data.filename}.pdf`}><img src={thumbnail}></a>
+	<a class="download" href={`/scores/${score.data.filename}.pdf`} download>
+		<button>PDF <img src="/download.svg" width="16px"></button>
+	</a>
+	<a class="download" href={`/scores/${score.data.filename}.mscz`} download>
+		<button>MSCZ <img src="/download.svg" width="16px"></button>
+	</a>
+</div>
+
+
+<style>
+	.card {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		width: 250px;
+	}
+
+	img {
+		vertical-align: bottom;
+	}
+</style>
