@@ -1,6 +1,5 @@
 import { z, defineCollection } from 'astro:content';
 
-// 2. Define a `type` and `schema` for each collection
 const scores = defineCollection({
   type: 'data',
   schema: z.object({
@@ -10,7 +9,6 @@ const scores = defineCollection({
   }),
 });
 
-// 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   'scores': scores,
 };
