@@ -16,19 +16,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="px-4 h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+	<body class="h-screen bg-gradient-to-br from-gray-900  via-gray-800 to-gray-900 bg-fixed text-white overflow-x-hidden">
 		<slot />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-</style>
-
-<!-- radial-gradient(at left top, rgb(17, 24, 39), rgb(75, 85, 99)) -->
